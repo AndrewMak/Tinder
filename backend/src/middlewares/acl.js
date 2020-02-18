@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/user");
 
 module.exports = async (req, res, next) => {
   if (!req.userId) return res.status(403).send({ error: "Not user login!" });

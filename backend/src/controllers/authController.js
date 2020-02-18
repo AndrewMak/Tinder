@@ -5,7 +5,7 @@ const mailer = require("../modules/mailer");
 
 const authConfig = require("../config/auth");
 
-const User = require("../models/User");
+const User = require("../models/user");
 
 function generateToken(params = {}) {
   return jwt.sign(params, authConfig.secret, {
