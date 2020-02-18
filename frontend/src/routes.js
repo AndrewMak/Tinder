@@ -1,13 +1,20 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Favorite from './pages/Favorite';
 import Main from './pages/main';
 import Login from './pages/login';
 
 export default function Routes() {
-    return (
-        <BrowserRouter>
-            <Route exact path="/" component={Login} />
-            <Route path="/main/:id" component={Main} />
-        </BrowserRouter>
-    );
+  return (
+    <Switch>
+      <Route exact path="/" component={Login} />
+      <Route path="/main/:id" component={Main} />
+      <Route exact path="/home" component={Home} />
+      <Route exact path="/cart" component={Cart} />
+      <Route exact path="/favorites" component={Favorite} />
+    </Switch>
+  );
 }
