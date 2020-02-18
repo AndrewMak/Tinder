@@ -5,7 +5,10 @@ const deslikeController = require('./controllers/deslikeController');
 const productController = require('./controllers/productController');
 const stockController = require('./controllers/stockController');
 const AuthController = require("./controllers/authController");
+const FileController = require("./controllers/fileController");
 
+const multer = require("multer");
+const multerConfig = require("./services/multer");
 const authMiddleware = require("./middlewares/auth");
 //middleware de perfil de usuario
 const aclMiddleware = require("./middlewares/acl");
@@ -39,5 +42,11 @@ routes.get('/stock/:id',  stockController.getbyid);
 
 
 
+
+
+
+routes.get("/posts", FileController.index);
+routes.post("/posts", multer(multerConfig).single("file"), FileController.store);
+routes.delete("/posts/:id", FileController.delete);
 
 module.exports = routes;
