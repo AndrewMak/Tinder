@@ -88,8 +88,8 @@ module.exports = {
 
       mailer.sendMail(
         {
-          to: email,
-          from: "iorgen@gmail.com",
+          to: "andrewmak@outlook.com.br",
+          from: "andrew.cm.sp@gmail.com",
           template: "auth/forgot_password",
           context: { token }
         },
@@ -105,7 +105,7 @@ module.exports = {
     } catch (err) {
       return res
         .status(400)
-        .send({ error: "Erro on forgot password, try again!" });
+        .send({ error: "Erro on forgot password, try again!" + err});
     }
   },
 

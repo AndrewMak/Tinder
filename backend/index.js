@@ -5,7 +5,7 @@ const routes = require('./src/routes')
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-
+const {mongo} = require("./src/config/auth.json");
 const connectedUsers = {
 }
 io.on('connection', socket => {
@@ -14,8 +14,8 @@ io.on('connection', socket => {
     connectedUsers[user] = socket.id;
 });
 
-mongoose.connect('mongodb://andrew:teste123@ds141952.mlab.com:41952/testeandrew',
-    { useNewUrlParser: true });
+mongoose.connect(mongo,
+    { useCreateIndex: true, useNewUrlParser: true });
 
 app.use((req, res, next) => {
     req.io = io;
