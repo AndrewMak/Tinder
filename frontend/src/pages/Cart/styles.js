@@ -25,7 +25,7 @@ export const Container = styled.div`
     }
 
     button {
-      background: #7159c1;
+      background: #14aa4b;
       color: #fff;
       border-radius: 4px;
       padding: 1.2rem 2rem;
@@ -34,7 +34,7 @@ export const Container = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.03, '#7159c1')};
+        background: ${darken(0.03, '#14aa4b')};
       }
     }
   }
@@ -52,7 +52,7 @@ export const ProductTable = styled.table`
         text-decoration: line-through;
       }
       &:last-child {
-        color: #7159c1;
+        color: #1ceb68;
       }
     }
   }

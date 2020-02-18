@@ -37,7 +37,7 @@ export const Container = styled.div`
     }
 
     button {
-      background: #7159c1;
+      background: #1ceb68;
       color: #fff;
       border-radius: 4px;
       padding: 1.2rem 2rem;
@@ -46,7 +46,7 @@ export const Container = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.03, '#7159c1')};
+        background: ${darken(0.03, '#1ceb68')};
       }
     }
   }
@@ -62,7 +62,7 @@ export const ProductTable = styled.table`
         text-decoration: line-through;
       }
       &:last-child {
-        color: #7159c1;
+        color: #1ceb68;
       }
     }
   }
@@ -113,7 +113,7 @@ export const ProductTable = styled.table`
   button {
     padding: 6px;
     font-size: 1.5rem;
-    color: #7159c1;
+    color: #1ceb68;
     font-weight: bold;
   }
 `;

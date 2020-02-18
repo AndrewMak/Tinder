@@ -20,7 +20,7 @@ export const Productlist = styled.ul`
     display: flex;
     flex-direction:column;
     span {
-        color: #7159c1;
+        color: #1ceb68;
         font-size: 2.1rem;
         font-weight: 700;
         margin-top:0.7rem;
@@ -84,19 +84,26 @@ export const Productlist = styled.ul`
       margin: 5px 0 20px;
     }
 
-    button {
-      background: #7159c1;
-      color: #fff;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      transition: background 0.2s;
+     .buttons {
+        margin-top:10px;
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+        grid-gap: 10px;
+    }
 
-      &:hover {
-        background: ${darken(0.03, '#7159c1')};
-      }
+     .buttons button {
+        height:50px;
+        box-shadow: 0 2px 2px 0 rgb(0,0,0,0.05);
+        border:0;
+        border-radius: 4px;
+        background: #fff;
+        cursor: pointer;
+    }
+
+     .buttons button:hover img{
+        transform: translateY(-5px);
+        transition: all 0.2s;
+    }
 
       div {
         display: flex;

@@ -16,6 +16,7 @@ routes.post('/devs', postController.store);
 routes.get('/devs/:id', postController.store);
 routes.get('/products/', productController.index);
 routes.get('/stocks/', stockController.index);
-
+routes.get('/products/:id', productController.getbyid);
+routes.get('/stock/:id', stockController.getbyid);
 
 module.exports = routes;

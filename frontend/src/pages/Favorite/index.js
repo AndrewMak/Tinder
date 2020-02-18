@@ -27,7 +27,7 @@ function Favorite({ product, removeToFavorite }) {
               </td>
               <td>
                 <button type="button" onClick={() => removeToFavorite(item.id)}>
-                  <MdDelete size={20} color="#7159c1" />
+                  <MdDelete size={20} color="#1ceb68" />
                 </button>
               </td>
               <td>

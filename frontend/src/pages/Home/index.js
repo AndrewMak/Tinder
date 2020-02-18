@@ -10,6 +10,8 @@ import { Productlist, Load } from './styles';
 import api from '../../services/api';
 import { formatPrice } from '../../util/format';
 import * as cartActions from '../../store/modules/cart/actions';
+import like from '../../assets/like.svg';
+import deslike from '../../assets/dislike.svg';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -42,7 +44,7 @@ export default function Home() {
       const data = response.data.map(product => ({
         ...product,
         priceFormatted: formatPrice(product.price),
-        beforePriceFormatted: formatPrice(product.price + product.price * 0.2),
+        beforePriceFormatted: formatPrice(product.price) + 9.00,
         parcel: formatPrice(product.price / 4),
       }));
 
@@ -76,9 +78,9 @@ export default function Home() {
                 onClick={() => handleAddFavorite(product.id)}
               >
                 {product.id === favorites[product.id] ? (
-                  <MdFavorite color="#7159c1" size={25} />
+                  <MdFavorite color="#1ceb68" size={25} />
                 ) : (
-                  <MdFavoriteBorder color="#7159c1" size={25} />
+                  <MdFavoriteBorder color="#1ceb68" size={25} />
                 )}
               </button>
             </header>
@@ -98,14 +100,24 @@ export default function Home() {
               <span>{product.priceFormatted}</span>
               <span>4x de {product.parcel}</span>
             </div>
-            <button type="button" onClick={() => handleAddProduct(product.id)}>
+            {/* <button type="button" onClick={() => handleAddProduct(product.id)}>
               <div>
                 <MdAddShoppingCart size={16} color="#fff" />{' '}
                 {amount[product.id] || 0}
               </div>
               <span>ADICIONAR AO CARRINHO</span>
-            </button>
+            </button> */}
+            <div className="buttons">
+                                <button onClick={() => { handleAddProduct(product.id)}} type="buttons">
+                                    <img src={like} alt="like" />
+                                </button>
+                                <button  type="buttons">
+                                    <img src={deslike} alt="deslike" />
+                                </button>
+            </div>
           </li>
+
+          
         ))}
       </Productlist>
       <Load loading={loading}>
