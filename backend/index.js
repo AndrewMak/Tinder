@@ -18,7 +18,7 @@ io.on('connection', socket => {
 });
 
 mongoose.connect(mongo,
-    { useCreateIndex: true, useNewUrlParser: true });
+    { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true  });
 
 app.use((req, res, next) => {
     req.io = io;
@@ -36,3 +36,4 @@ app.use(
 app.use(routes);
 
 server.listen(3333);
+console.log("rodando na porta 3333");
