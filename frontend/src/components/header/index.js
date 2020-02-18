@@ -9,10 +9,10 @@ export default function Header() {
   const cartSize = useSelector(state => state.cart.length);
   return (
     <Container>
-      <Link to="/">
+      {/* <Link to="/">
         <img src={logo} alt="Rocketshoes" />
-      </Link>
-      <nav>
+      </Link> */}
+      {/* <nav>
         <Cart to="/cart">
           <div>
             <strong>Meu carrinho</strong>
@@ -26,7 +26,7 @@ export default function Header() {
             <MdFavorite size={30} color="#fff" />
           </div>
         </Cart>
-      </nav>
+      </nav> */}
     </Container>
   );
 }

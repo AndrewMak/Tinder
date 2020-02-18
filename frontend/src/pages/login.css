@@ -1,44 +1,59 @@
-.login{
-    height:100%;
-    display:flex;
+.login {
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
 .login form {
-    width:100%;
+    width: 100%;
     max-width: 300px;
     display: flex;
     flex-direction: column;
 }
 
-.login form input{
-    margin-top : 20px;
-    border : 1px solid #ddd;
-    border-radius:5px;
-    height:48px;
+.login form input {
+    margin-top: 20px;
+    border: 1px solid #65d452;
+    border-radius: 30px;
+    height: 48px;
     padding: 0 20px;
-    font-size:16px;
-    color:#666;
-    
+    font-size: 16px;
+    background-color: #2e3844;
+    color: #FFF;
+
 }
 
-.login form input::placeholder{
+.login form input::placeholder {
     color: #999;
 }
 
-.login form button{
-    margin-top:10px;
-    border:0;
-    border-radius:4px;
-    height:48px;
-    font-size:16px;
-    background-color:#DF4723;
+.login form button {
+    margin-top: 10px;
+    border: 0;
+    border-radius: 30px;
+    height: 48px;
+    font-size: 16px;
+    border: 1px solid #65d452;
+    background-color: #2e3844;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
 }
 
-.login form button:hover{
-background-color:#cb3f1e;
-transition: all 0.3s;
+.login form button:hover {
+    background-color: #65d452;
+    transition: all 0.3s;
+}
+
+
+.login-link-cadastro {
+    font-size: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.login-link-cadastro a {
+    color: #999;
 }

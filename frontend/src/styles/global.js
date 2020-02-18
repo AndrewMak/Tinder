@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import background from '../assets/background.svg';
+// import background from '../assets/background.svg';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
@@ -14,7 +14,7 @@ export default createGlobalStyle`
  }
 
 body{
-  background: #202020 url(${background}) no-repeat center top;
+  background: #2e3844;
 }
  
 #root{

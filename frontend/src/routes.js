@@ -6,6 +6,7 @@ import Cart from './pages/Cart';
 import Favorite from './pages/Favorite';
 import Main from './pages/main';
 import Login from './pages/login';
+import Cadastro from './pages/Cadastro';
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
       <Route exact path="/home" component={Home} />
       <Route exact path="/cart" component={Cart} />
       <Route exact path="/favorites" component={Favorite} />
+      <Route exact path="/cadastro" component={Cadastro} />
     </Switch>
   );
 }
