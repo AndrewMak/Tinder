@@ -88,7 +88,7 @@ module.exports = {
 
       mailer.sendMail(
         {
-          to: "andrewmak@outlook.com.br",
+          to: email,
           from: "andrew.cm.sp@gmail.com",
           template: "auth/forgot_password",
           context: { token }
