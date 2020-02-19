@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import api from "../services/api";
 import "./questionario.css";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 
 export default function Questionario({ history }) {
   const [valor, setValor] = useState("");
@@ -17,7 +17,7 @@ export default function Questionario({ history }) {
 
   return (
     <div className="questionario-container">
-      <img src={logo} className="logo" alt="tindev" />
+        <img src={logo} className="logo" width="350px" height="200px" alt="tindev" />
 
       <h2>Conclua o seu Questionario em menos de 5 minutos e aguarda o match.</h2>
 

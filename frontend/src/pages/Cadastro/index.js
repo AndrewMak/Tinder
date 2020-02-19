@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import api from "../services/api";
 import "./cadastro.css";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 
 export default function Cadastro({ history }) {
   const [cpf, setCPF] = useState("");
@@ -19,7 +19,7 @@ export default function Cadastro({ history }) {
 
   return (
     <div className="cadastro-container">
-      <img src={logo} className="logo" alt="tindev" />
+     <img src={logo} className="logo" width="350px" height="200px" alt="tindev" />
 
       <h2>Conclua o seu cadastro em menos de 5 minutos e aguarda o match.</h2>
 
