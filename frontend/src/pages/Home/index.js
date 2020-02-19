@@ -32,24 +32,27 @@ export default function Home({history}) {
   );
 
   const dispatch = useDispatch();
+  const values = queryString.parse(history.location.search);
+  const{ valor, tempo } = values;
 
   useEffect(() => {
     async function loadProducts() {
       setIdProductForPreview(false);
-      // setLoading(true);
-      const values = queryString.parse(history.location.search);
-          var valor = values.valor;
+       setLoading(true);
+    
+
       const response = await api.get(`/products/filter/${valor}`);
 
       const data = response.data.map(product => ({
         ...product,
-        priceFormatted: formatPrice(product.price),
-        beforePriceFormatted: formatPrice(product.price) + 9.0,
-        parcel: formatPrice(product.price / 4)
+        priceFormatted: formatPrice(product.price * Math.pow((1.029), tempo)),
+        beforePriceFormatted: formatPrice(product.price),
+        parcel: formatPrice(product.price * Math.pow((1.029), tempo)/ tempo),
+        percentual: 1.02,
       }));
 
       setProducts(data);
-      // setLoading(false);
+       setLoading(false);
     }
 
     loadProducts();
@@ -133,7 +136,8 @@ export default function Home({history}) {
                 <div class="center">
                   <div class="text-top">{product.beforePriceFormatted}</div>
                   <div class="text-middle">{product.priceFormatted}</div>
-                  <div class="text-bottom">4x de {product.parcel}</div>
+                <div class="text-bottom">{tempo}x de {product.parcel}</div>
+                <div>{((product.percentual - 1) * 100).toFixed(2)}% a.m</div>
                 </div>
                 <hr />
                 <div class="footer">
