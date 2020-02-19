@@ -14,7 +14,7 @@ export default function Login({ history }) {
       const response = await api.post("/auth/authenticate", { email: username, password });
       console.log(response, username,password)
       const { token } = response.data;
-      history.push(`/home`);
+      history.push(`/questionario`);
     } catch (err) {
       return err;
     }
