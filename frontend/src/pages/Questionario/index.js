@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 //import api from "../services/api";
 import "./questionario.css";
+import api from "../../services/api";
 import logo from "../../assets/logo.png";
-
+import queryString from 'query-string'
 export default function Questionario({ history }) {
   const [valor, setValor] = useState("");
   const [tempo, setTempo] = useState(0);
@@ -10,9 +11,17 @@ export default function Questionario({ history }) {
 
   var erro;
 
-  async function handleSubmit() { 
-
-    history.push("/home");
+  async function handleSubmit(e) {
+    try {
+      const values = queryString.parse(history.location.search);
+      const user = values.token;
+      e.preventDefault();
+      const response = await api.post("/questionario", { valor, tempo, user });
+      const { token } = response.data;
+      history.push(`/home?valor=${valor}&tempo=${tempo}`);
+    } catch (err) {
+      return err;
+    }
   }
 
   return (

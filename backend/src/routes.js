@@ -6,6 +6,7 @@ const productController = require('./controllers/productController');
 const stockController = require('./controllers/stockController');
 const AuthController = require("./controllers/authController");
 const FileController = require("./controllers/fileController");
+const QuestionarioController = require("./controllers/questionarioController");
 
 const multer = require("multer");
 const multerConfig = require("./services/multer");
@@ -37,7 +38,7 @@ routes.get('/products/',  productController.index);
 routes.get('/stocks/',  stockController.index);
 routes.get('/products/:id',  productController.getbyid);
 routes.get('/stock/:id',  stockController.getbyid);
-
+routes.post('/questionario/',  QuestionarioController.store);
 
 
 
