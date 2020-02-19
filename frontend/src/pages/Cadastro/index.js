@@ -9,6 +9,9 @@ export default function Cadastro({ history }) {
   const [celular, setCel] = useState("");
   const [end, setEnd] = useState("");
   const [cep, setCep] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
 
   var erro;
 
@@ -21,13 +24,24 @@ export default function Cadastro({ history }) {
       <h2>Conclua o seu cadastro em menos de 5 minutos e aguarda o match.</h2>
 
       <form onSubmit={handleSubmit}>
+      <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        ></input>
         <input
           type="number"
           placeholder="CPF"
           value={cpf}
           onChange={e => setCPF(e.target.value)}
         ></input>
-
+       <input
+          type="text"
+          placeholder="Senha"
+          value={senha}
+          onChange={e => setSenha(e.target.value)}
+        ></input>
         <input
           type="text"
           placeholder="Nome Completo"
@@ -61,12 +75,14 @@ export default function Cadastro({ history }) {
           <option value="F">Feminino</option>
         </select>
 
-        <div class="cadastro-termos">
+        <div className="cadastro-termos">
           <input type="radio" value="AC" id="AC" ></input>
-          <label for="AC">Li e concordo com os Termos e com a Politíca de privacidade, e disponibilizo meus dados para análise de crédito.</label>
+          <label htmlfor="AC">Li e concordo com os Termos e com a Politíca de privacidade, e disponibilizo meus dados para análise de crédito.</label>
         </div>
 
         <button type="submit">Cadastrar</button>
+        <button onClick={() => { history.push("/")}}>Voltar</button>
+
         {erro !== "error" ? "" : <p>deu erro</p>}
       </form>
     </div>

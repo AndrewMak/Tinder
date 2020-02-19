@@ -11,13 +11,17 @@ export default function Login({ history }) {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-      const response = await api.post("/auth/authenticate", { username, password });
-      console.log(response, username, password)
-      const { _id } = response.data;
-      history.push(`/main/${_id}`);
+      const response = await api.post("/auth/authenticate", { email: username, password });
+      console.log(response, username,password)
+      const { token } = response.data;
+      history.push(`/home`);
     } catch (err) {
       return err;
     }
+  }
+
+  function handleCadastro(){
+    history.push(`/cadastro`);
   }
 
   return (
@@ -40,7 +44,7 @@ export default function Login({ history }) {
         {erro !== "error" ? "" : <p>deu erro</p>}
       </form>
       <div className="login-link-cadastro">
-        <a href="#">Cadastrar</a>
+        <a  onClick={() => { handleCadastro()}}>Cadastrar</a>
       </div>
     </div>
   );
