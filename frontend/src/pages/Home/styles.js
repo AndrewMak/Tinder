@@ -68,9 +68,10 @@ export const Productlist = styled.ul`
 
     img {
       align-self: center;
-      max-width: 250px;
+      //max-width: 250px;
       width: 100%;
       cursor: pointer;
+      border-radius: 15px 15px 0 0;
     }
 
     // > strong {
@@ -145,21 +146,20 @@ export const Productlist = styled.ul`
 
 .panel .header {
   position: absolute;
-  top: -60px;
+  top: -65px;
   height: 100px;
-  width: 80px;    
+  width: 150px;   
   z-index: -1;
   vertical-align: middle;
   line-height: 50px;
-  padding: 0 10px;
 }
 
-.panel .header.santander {
-  background-color: red;
-}
-.panel .header.sofisa {
-  background-color: #0cb598;
-}
+// .panel .header.santander {
+//   background-color: red;
+// }
+// .panel .header.sofisa {
+//   background-color: #0cb598;
+// }
 
 .panel .content {
   padding: 8px 10px;
@@ -189,7 +189,7 @@ export const Productlist = styled.ul`
 .panel .content .footer {
   text-align: center;
   width: 80%;
-  margin: 0 auto;
+  margin: 10px auto;
   position: relative;
 }
 
@@ -197,16 +197,22 @@ export const Productlist = styled.ul`
   border-radius: 40px;
   width: 40px;
   height: 40px;
+  font-size: 15px;
+  padding: 10px;
   position: absolute;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .panel .content .footer .icon.like {
   border: 1px solid lightgreen;
+  color: lightgreen;
   left: 0;
 }
 
 .panel .content .footer .icon.dislike {
   border: 1px solid lightsalmon;
+  color: lightsalmon;
   right: 0;
 }
 
