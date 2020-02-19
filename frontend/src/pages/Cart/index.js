@@ -42,7 +42,6 @@ export default function Cart() {
           <tr>
             <th />
             <th>PRODUTO</th>
-            <th>QTD</th>
             <th>SUBTOTAL</th>
             <th />
           </tr>
@@ -56,19 +55,8 @@ export default function Cart() {
               <td>
                 <strong>{item.title}</strong>
                 <div className="promotion">
-                  <span>{item.beforePriceFormatted}</span>
+                  {/* <span>{item.beforePriceFormatted}</span> */}
                   <span>{item.priceFormatted}</span>
-                </div>
-              </td>
-              <td>
-                <div>
-                  <button type="button" onClick={() => decrement(item)}>
-                    <MdRemoveCircleOutline size={20} color="#1ceb68" />
-                  </button>
-                  <input type="number" readOnly value={item.amount} />
-                  <button type="button" onClick={() => increment(item)}>
-                    <MdAddCircleOutline size={20} color="#1ceb68" />
-                  </button>
                 </div>
               </td>
               <td>

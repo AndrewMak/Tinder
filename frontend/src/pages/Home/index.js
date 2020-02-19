@@ -137,7 +137,7 @@ export default function Home() {
                 </div>
                 <hr />
                 <div class="footer">
-                  <div class="icon like">$</div>
+                  <div onClick={() => handleAddProduct(product.id)} class="icon like">$</div>
                   <div class="icon dislike">X</div>
                 </div>
               </div>

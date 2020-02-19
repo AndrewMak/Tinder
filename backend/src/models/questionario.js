@@ -10,7 +10,7 @@ const QuestionarioSchema = new Schema({
         required: true,
     },
     userid: {
-        type: Number
+        type: String
     },
 },
     {
