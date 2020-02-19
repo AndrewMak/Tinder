@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   MdAddShoppingCart,
   MdFavoriteBorder,
-  MdFavorite,
-} from 'react-icons/md';
-import { FaSpinner } from 'react-icons/fa';
-import { useSelector, useDispatch } from 'react-redux';
-import { Productlist, Load } from './styles';
-import api from '../../services/api';
-import { formatPrice } from '../../util/format';
-import * as cartActions from '../../store/modules/cart/actions';
-import like from '../../assets/like.svg';
-import deslike from '../../assets/dislike.svg';
+  MdFavorite
+} from "react-icons/md";
+import { FaSpinner } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { Productlist, Load } from "./styles";
+import api from "../../services/api";
+import { formatPrice } from "../../util/format";
+import * as cartActions from "../../store/modules/cart/actions";
+import like from "../../assets/like.svg";
+import deslike from "../../assets/dislike.svg";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -39,13 +39,13 @@ export default function Home() {
       setIdProductForPreview(false);
       setLoading(true);
 
-      const response = await api.get('/products');
+      const response = await api.get("/products");
 
       const data = response.data.map(product => ({
         ...product,
         priceFormatted: formatPrice(product.price),
-        beforePriceFormatted: formatPrice(product.price) + 9.00,
-        parcel: formatPrice(product.price / 4),
+        beforePriceFormatted: formatPrice(product.price) + 9.0,
+        parcel: formatPrice(product.price / 4)
       }));
 
       setProducts(data);
@@ -72,7 +72,7 @@ export default function Home() {
       <Productlist>
         {products.map(product => (
           <li key={product.id}>
-            <header>
+            {/* <header>
               <button
                 type="button"
                 onClick={() => handleAddFavorite(product.id)}
@@ -100,13 +100,13 @@ export default function Home() {
               <span>{product.priceFormatted}</span>
               <span>4x de {product.parcel}</span>
             </div>
-            {/* <button type="button" onClick={() => handleAddProduct(product.id)}>
+            <button type="button" onClick={() => handleAddProduct(product.id)}>
               <div>
                 <MdAddShoppingCart size={16} color="#fff" />{' '}
                 {amount[product.id] || 0}
               </div>
               <span>ADICIONAR AO CARRINHO</span>
-            </button> */}
+            </button>
             <div className="buttons">
                                 <button onClick={() => { handleAddProduct(product.id)}} type="buttons">
                                     <img src={like} alt="like" />
@@ -114,10 +114,35 @@ export default function Home() {
                                 <button  type="buttons">
                                     <img src={deslike} alt="deslike" />
                                 </button>
+            </div> */}
+            <div class="panel rounded">
+              <div class="header rounded santander">
+                <img
+                  onMouseEnter={() => setIdProductForPreview(product.id)}
+                  onMouseLeave={() => setIdProductForPreview(0)}
+                  src={
+                    product.id !== idProductForPreview
+                      ? `${product.preview1}`
+                      : `${product.preview2}`
+                  }
+                  alt={product.title}
+                />
+              </div>
+              <div class="content">
+                <div class="title">{product.title}</div>
+                <div class="center">
+                  <div class="text-top">{product.beforePriceFormatted}</div>
+                  <div class="text-middle">{product.priceFormatted}</div>
+                  <div class="text-bottom">4x de {product.parcel}</div>
+                </div>
+                <hr />
+                <div class="footer">
+                  <div class="icon like">$</div>
+                  <div class="icon dislike">X</div>
+                </div>
+              </div>
             </div>
           </li>
-
-          
         ))}
       </Productlist>
       <Load loading={loading}>
