@@ -11,6 +11,7 @@ import api from "../../services/api";
 import { formatPrice } from "../../util/format";
 import * as cartActions from "../../store/modules/cart/actions";
 import queryString from 'query-string';
+import logo from "../../assets/logo.png";
 
 export default function Home({history}) {
   const [products, setProducts] = useState([]);
@@ -45,10 +46,10 @@ export default function Home({history}) {
 
       const data = response.data.map(product => ({
         ...product,
-        priceFormatted: formatPrice(product.price * Math.pow((1.029), tempo)),
-        beforePriceFormatted: formatPrice(product.price),
-        parcel: formatPrice(product.price * Math.pow((1.029), tempo)/ tempo),
-        percentual: 1.02,
+        priceFormatted: formatPrice(valor * Math.pow((product.percentual), tempo)),
+        beforePriceFormatted: formatPrice(valor),
+        parcel: formatPrice(valor * Math.pow((product.percentual), tempo)/ tempo),
+        percentual: product.percentual,
       }));
 
       setProducts(data);
@@ -61,7 +62,10 @@ export default function Home({history}) {
   function handleAddProduct(id) {
     return dispatch(cartActions.addToCartRequest(id));
   }
-
+  function handleRemoveProduct(id) {
+   setProducts(products.filter(item => item.id !== id))
+  }
+  
   function handleAddFavorite(id) {
     if (favorites[id]) {
       delete favorites[id];
@@ -142,7 +146,7 @@ export default function Home({history}) {
                 <hr />
                 <div class="footer">
                   <div onClick={() => handleAddProduct(product.id)} class="icon like">$</div>
-                  <div class="icon dislike">X</div>
+                  <div onClick={() => handleRemoveProduct(product.id)} class="icon dislike">X</div>
                 </div>
               </div>
             </div>

@@ -21,6 +21,10 @@ const productSchema = new Schema({
         type: String,
         required: true,
     },
+    percentual: {
+        type: Number,
+        required: true,
+    },
 },
     {
         timestamps: true,

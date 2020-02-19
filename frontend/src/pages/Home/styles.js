@@ -189,7 +189,7 @@ export const Productlist = styled.ul`
 .panel .content .footer {
   text-align: center;
   width: 80%;
-  margin: 10px auto;
+  margin: 7px auto;
   position: relative;
 }
 
