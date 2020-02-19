@@ -3,7 +3,7 @@ import api from '../services/api';
 import './main.css';
 import io from 'socket.io-client';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 import like from '../assets/like.svg';
 import deslike from '../assets/dislike.svg';
 import itsmatch from '../assets/itsamatch.png';

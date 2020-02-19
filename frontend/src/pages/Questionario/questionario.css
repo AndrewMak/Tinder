@@ -1,0 +1,81 @@
+.questionario-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.questionario-container h2 {
+    margin: 30px 0;
+    color: #a0a0a0;
+}
+
+.questionario-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.questionario-container form input {
+    border: none;
+    border-bottom: 1px solid #65d452;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    background-color: #2e3844;
+    font-size: 14px;
+    width: 100%;
+    color: #fff;
+}
+
+.questionario-container form input:focus {
+    border-bottom: 1px solid #56834e;
+}
+
+.questionario-container form select {
+    border: none;
+    border-bottom: 1px solid #65d452;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #2e3844;
+    font-size: 14px;
+    width: 100%;
+    color: #fff;
+}
+
+.questionario-container form select option {
+    color: #fff;
+}
+
+.questionario-container form .questionario-termos {
+    display: flex;
+    font-size: 14px;
+    color: #a0a0a0;
+    margin: 15px 0;
+    justify-content: center;
+}
+
+.questionario-container form .questionario-termos input {
+    width: 30px;
+}
+
+.questionario-container form button {
+    margin-top: 10px;
+    border: 0;
+    border-radius: 30px;
+    height: 48px;
+    font-size: 16px;
+    border: 1px solid #65d452;
+    background-color: #2e3844;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.questionario-container form button:hover {
+    background-color: #65d452;
+    transition: all 0.3s;
+}
