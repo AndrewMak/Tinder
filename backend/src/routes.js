@@ -37,6 +37,8 @@ routes.get('/devs/:id',  postController.store);
 routes.get('/products/',  productController.index);
 routes.get('/stocks/',  stockController.index);
 routes.get('/products/:id',  productController.getbyid);
+routes.get('/products/filter/:valor',  productController.getbyfilter);
+
 routes.get('/stock/:id',  stockController.getbyid);
 routes.post('/questionario/',  QuestionarioController.store);
 

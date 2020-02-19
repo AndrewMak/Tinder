@@ -12,5 +12,12 @@ module.exports = {
         const response = await product.findOne({ id })
 
         return res.json(response);
+    },
+    async getbyfilter(req, res) {
+        const {valor} = req.params;
+
+        const response = await product.find({  price: { $gte: valor}})
+
+        return res.json(response);
     }
 }

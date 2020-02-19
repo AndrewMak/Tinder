@@ -10,10 +10,9 @@ import { Productlist, Load } from "./styles";
 import api from "../../services/api";
 import { formatPrice } from "../../util/format";
 import * as cartActions from "../../store/modules/cart/actions";
-import like from "../../assets/like.svg";
-import deslike from "../../assets/dislike.svg";
+import queryString from 'query-string';
 
-export default function Home() {
+export default function Home({history}) {
   const [products, setProducts] = useState([]);
   const [idProductForPreview, setIdProductForPreview] = useState(Boolean);
   const [loading, setLoading] = useState(Boolean);
@@ -37,9 +36,10 @@ export default function Home() {
   useEffect(() => {
     async function loadProducts() {
       setIdProductForPreview(false);
-      setLoading(true);
-
-      const response = await api.get("/products");
+      // setLoading(true);
+      const values = queryString.parse(history.location.search);
+          var valor = values.valor;
+      const response = await api.get(`/products/filter/${valor}`);
 
       const data = response.data.map(product => ({
         ...product,
@@ -49,7 +49,7 @@ export default function Home() {
       }));
 
       setProducts(data);
-      setLoading(false);
+      // setLoading(false);
     }
 
     loadProducts();
