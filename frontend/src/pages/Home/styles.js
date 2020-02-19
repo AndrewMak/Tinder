@@ -208,12 +208,26 @@ export const Productlist = styled.ul`
   border: 1px solid lightgreen;
   color: lightgreen;
   left: 0;
+  transition: 1s;
 }
 
 .panel .content .footer .icon.dislike {
   border: 1px solid lightsalmon;
   color: lightsalmon;
   right: 0;
+  transition: 1s;
+}
+
+.panel .content .footer .icon.like:hover {
+  background-color: lightgreen;
+  color: #FFF;
+  transition: 1s;
+}
+
+.panel .content .footer .icon.dislike:hover {
+  background-color: lightsalmon;
+  color: #FFF;
+  transition: 1s;
 }
 
 `;
